@@ -82,20 +82,30 @@ pathmunge /usr/jdk/latest/bin after
  
 pathmunge /bin after
 pathmunge /sbin after
+pathmunge /usr/local/bin  after
 pathmunge /usr/bin after
+pathmunge /usr/local/sbin  after
 pathmunge /usr/sbin after
 pathmunge /usr/X11/bin after
 
 pathmunge /Library/PostgreSQL/8.4/bin after
-pathmunge /usr/local/bin  after
 pathmunge /usr/local/mysql/bin after
 pathmunge /usr/local/grails after
-pathmunge /Users/kinabalu/Source/lib/gradle-0.9.1/bin
-pathmunge /Library/PostgreSQL/8.4/bin after
+pathmunge /opt/local/bin after
+pathmunge /usr/local/sbin after
+pathmunge /usr/local/share/npm/bin after
+pathmunge /Users/kinabalu/bin/play-1.2.3 after
+pathmunge /Users/kinabalu/Source/lib/gradle-0.9.1/bin after
+pathmunge /Library/PostgreSQL/8.4/bin
+pathmunge /usr/share/php/pear/bin
 
 export path
- 
- 
+
+export WORKON_HOME=~/.env
+export NODE_PATH=/usr/local/lib/node_modules
+
+source /usr/local/bin/virtualenvwrapper.sh
+
 #-----------------------------------------------------------
 # Set my default editer
 #-----------------------------------------------------------
@@ -159,6 +169,9 @@ alias l.="ls -d $LS_OPTIONS .[0-9a-zA-Z]*"
  
 alias psg="ps $PSG_OPTIONS |  grep -i"
  
+alias p="python"
+alias grep="ack"
+
 alias find='noglob find'
  
 alias connections="netstat -ant | awk '{print $NF}' | grep -v '[a-z]' | sort | uniq -c"
@@ -180,7 +193,23 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 alias .......='cd ../../../../../..'
- 
+
+
+#-----------------------------------------------------------
+# Git aliases
+#-----------------------------------------------------------
+alias gs='git status '
+alias ga='git add '
+alias gb='git branch '
+alias gc='git commit '
+alias gd='git diff '
+alias go='git checkout '
+alias gk='gitk --all&'
+alias gx='gitx --all'
+
+alias got='git '
+alias get='git '
+
 #-----------------------------------------------------------
 # Colored filename-completion!!11!!!
 #-----------------------------------------------------------
@@ -351,3 +380,5 @@ WATCHFMT="[%B%t%b] %B%n%b has %a %B%l%b from %B%M%b"
 ROOTTEXT=%(!.-=*[ROOT ZSH]*=-.)
 ROOTPROMPTADD=%(!. .)
 ROOTTITLEADD=%(!. | .)
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
