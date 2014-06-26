@@ -97,12 +97,13 @@ pathmunge /usr/local/share/npm/bin after
 pathmunge /Users/kinabalu/bin/play-1.2.3 after
 pathmunge /Users/kinabalu/Source/lib/gradle-0.9.1/bin after
 pathmunge /Library/PostgreSQL/8.4/bin
-pathmunge /usr/share/php/pear/bin
+pathmunge /usr/share/php/pear/bin after
+pathmunge /Users/kinabalu/bin/android-sdk-macosx/tools after
 
 export path
 
 export WORKON_HOME=~/.env
-export NODE_PATH=/usr/local/lib/node_modules
+export NODE_PATH=/usr/local/lib/node_modules:/usr/local/share/npm/lib/node_modules
 
 source /usr/local/bin/virtualenvwrapper.sh
 
@@ -175,7 +176,10 @@ alias grep="ack"
 alias find='noglob find'
  
 alias connections="netstat -ant | awk '{print $NF}' | grep -v '[a-z]' | sort | uniq -c"
- 
+
+# alias to nw
+alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit"
+
 #-----------------------------------------------------------
 # cd fun
 #-----------------------------------------------------------
